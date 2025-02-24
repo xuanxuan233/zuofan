@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vein给刘枭做饭</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .options {
+            margin-top: 20px;
+        }
+        button {
+            font-size: 16px;
+            padding: 10px 20px;
+            margin: 10px;
+            transition: all 0.3s ease;
+        }
+        #option1 {
+            font-size: 20px;
+        }
+        #option2 {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Vein给刘枭做饭</h1>
+    <a href="https://ibb.co/RTNwGqTL">
+        <img src="https://i.ibb.co/F4XTkF4G/9-C202753-6-D32-4-EFF-B886-74-C46-CA514-A6.jpg" 
+             alt="Vein cooking" border="0">
+    </a>
+    <div class="options">
+        <button id="option1" onclick="chooseOption1()">给你做顿大的</button>
+        <button id="option2" onclick="chooseOption2()">不做</button>
+    </div>
+    <p id="message"></p>
+    
+    <script>
+        let clickCount = 0;
+        function chooseOption1() {
+            document.getElementById("message").innerText = "你真好我爱你";
+        }
+        
+        function chooseOption2() {
+            const messages = ["不行", "给我做", "一直点这个也没用", "我要吃大头", "谢谢"];
+            document.getElementById("message").innerText = messages[clickCount % messages.length];
+            clickCount++;
+            
+            let option1 = document.getElementById("option1");
+            let option2 = document.getElementById("option2");
+            
+            let option1Size = parseInt(window.getComputedStyle(option1).fontSize);
+            let option2Size = parseInt(window.getComputedStyle(option2).fontSize);
+            
+            option1.style.fontSize = (option1Size + 4) + "px";
+            option2.style.fontSize = (option2Size - 2) + "px";
+        }
+    </script>
+</body>
+</html>
